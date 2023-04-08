@@ -1,6 +1,6 @@
 function Filter({filterElement, setProperty, property, state, inputHandle}) {
   return (
-    <div className="flex flex-col items-center max-w-sm rounded-lg mx-4">
+    <div className="flex flex-col items-center max-w-sm p-4 rounded-lg mx-4 ">
       <h2 className="text-3xl font-extrabold mt-2 text-white">Filter</h2>
       <div className="grid grid-cols-2 gap-2 my-4">
         {filterElement.map((filter) => (
@@ -15,7 +15,7 @@ function Filter({filterElement, setProperty, property, state, inputHandle}) {
       </div>
 
       <div>
-        <label className="text-2xl font-extrabold my-4 capitalize  text-white" htmlFor="range">
+        <label className="text-2xl font-extrabold capitalize  text-white" htmlFor="range">
           {property.name}: {state[property.name]}%
         </label>
       </div>

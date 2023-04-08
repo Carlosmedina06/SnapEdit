@@ -52,6 +52,7 @@ function App() {
     vertical: 1,
     horizental: 1,
   })
+
   const inputHandle = (e) => {
     setState({
       ...state,
@@ -164,6 +165,7 @@ function App() {
       reader.readAsDataURL(e.target.files[0])
     }
   }
+
   const imageCrop = () => {
     const canvas = document.createElement('canvas')
     const scaleX = details.naturalWidth / details.width
@@ -215,31 +217,37 @@ function App() {
   }
 
   return (
-    <main className="bg-gradient-to-b from-gray-700 via-gray-900 to-black min-h-screen">
-      <div className="container mx-auto">
-        <Filter
-          filterElement={filterElement}
-          inputHandle={inputHandle}
-          property={property}
-          setProperty={setProperty}
-          state={state}
-        />
-        <Rotate
-          horizontalFlip={horizentalFlip}
-          leftRotate={leftRotate}
-          rightRotate={rightRotate}
-          verticalFlip={verticalFlip}
-        />
-        <Botones redo={redo} reset={reset} saveImage={saveImage} undo={undo} />
-        <CropImage
-          crop={crop}
-          imageCrop={imageCrop}
-          setCrop={setCrop}
-          setDetails={setDetails}
-          state={state}
-        />
-        <UploadImg imageHandle={imageHandle} />
-      </div>
+    <main className="bg-gradient-to-b from-gray-700 via-gray-900 to-black min-h-screen p-16">
+      <section className="container flex justify-around flex-col md:flex-row mx-auto px-4 rounded-lg  bg-slate-600 ">
+        <article className="flex flex-col justify-start py-6">
+          <Filter
+            filterElement={filterElement}
+            inputHandle={inputHandle}
+            property={property}
+            setProperty={setProperty}
+            state={state}
+          />
+
+          <Rotate
+            horizontalFlip={horizentalFlip}
+            leftRotate={leftRotate}
+            rightRotate={rightRotate}
+            verticalFlip={verticalFlip}
+          />
+        </article>
+
+        <article className="flex flex-col justify-end py-6">
+          <CropImage
+            crop={crop}
+            imageCrop={imageCrop}
+            imageHandle={imageHandle}
+            setCrop={setCrop}
+            setDetails={setDetails}
+            state={state}
+          />
+          <Botones redo={redo} reset={reset} saveImage={saveImage} undo={undo} />
+        </article>
+      </section>
     </main>
   )
 }

@@ -1,6 +1,6 @@
 const UploadImg = ({imageHandle}) => {
   return (
-    <>
+    <div className="flex flex-col">
       <label className="text-3xl font-extrabold mt-2 text-white mb-4" htmlFor="file_input">
         Upload file
       </label>
@@ -14,7 +14,7 @@ const UploadImg = ({imageHandle}) => {
       <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
         PNG, JPG, GIF up to 10MB
       </p>
-    </>
+    </div>
   )
 }
 
