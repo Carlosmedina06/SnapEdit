@@ -1,4 +1,4 @@
-const UploadImg = ({imageHandle}) => {
+const UploadImg = ({ imageHandle }) => {
   return (
     <div className="flex flex-col">
       <label className="text-3xl font-extrabold mt-2 text-white mb-4" htmlFor="file_input">
